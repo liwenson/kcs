@@ -29,6 +29,7 @@ func Execute() {
 }
 
 func init() {
+
 	cobra.OnInitialize(initConfig)
 
 	rootCmd.AddCommand(listCmd)
@@ -56,6 +57,7 @@ func initConfig() {
 	}
 
 	_, err = util.FileExists(global.KcsConfig, true)
+
 	if err != nil {
 		fmt.Println(err)
 		return

@@ -24,6 +24,7 @@ var listCmd = &cobra.Command{
 			fmt.Println(err)
 			return
 		}
+
 		// 获取当前的配置
 
 		readFile, err := os.ReadFile(fmt.Sprintf("%s", global.KcsConfig))
@@ -40,6 +41,7 @@ var listCmd = &cobra.Command{
 		color.Green("当前: \t %s\n", current)
 		for _, name := range fileList {
 			color.Blue("\t %s", name)
+
 		}
 	},
 }

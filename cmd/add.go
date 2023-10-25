@@ -19,6 +19,7 @@ var addCmd = &cobra.Command{
 		// 参数校验
 
 		if global.Name == "" {
+
 			fmt.Println("必须指定名称")
 			return
 		}
@@ -30,6 +31,7 @@ var addCmd = &cobra.Command{
 
 		// 重名校验
 		fileList, err := util.ListDir(global.KcsData)
+
 		if err != nil {
 			fmt.Println(err)
 			return
@@ -56,11 +58,13 @@ var addCmd = &cobra.Command{
 		}
 
 		err = os.WriteFile(fmt.Sprintf("%s/%s", global.KcsData, global.Name), readFile, 0666)
+
 		if err != nil {
 			fmt.Println(err)
 			return
 		}
 
 		color.Green("%s,添加成功!", global.Name)
+
 	},
 }
