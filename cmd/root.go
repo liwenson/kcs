@@ -36,9 +36,11 @@ func init() {
 	rootCmd.AddCommand(addCmd)
 	rootCmd.AddCommand(useCmd)
 	rootCmd.AddCommand(removeCmd)
+	rootCmd.AddCommand(viewCmd)
 
 	addCmd.Flags().StringVarP(&global.Name, "name", "n", "", "config name")
 	addCmd.Flags().StringVarP(&global.Kubeconfig, "kubeconfig", "c", "", "config path")
+	viewCmd.Flags().BoolVarP(&global.Server, "service", "s", false, "查看k8s集群地址")
 
 }
 

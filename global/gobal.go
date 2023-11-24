@@ -16,4 +16,6 @@ var (
 	// 添加变量 name
 	Name       string
 	Kubeconfig string
+	// 查看变量
+	Server bool
 )
